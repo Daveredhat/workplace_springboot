@@ -1,0 +1,23 @@
+{
+  "name": "Spring Boot Dev",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": true,
+      "installGradle": false
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "forwardPorts": [8080, 5432, 8888],
+
+  "postCreateCommand": "mvn dependency:resolve",
+
+  "customizations": {
+    "jetbrains": {
+      "backend": "IntelliJIdea"
+    }
+  }
+}
